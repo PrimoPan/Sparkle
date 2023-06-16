@@ -2,34 +2,53 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Image} from "react-bootstrap";
 import logo from "../../img/logo.png"
+import Button from 'react-bootstrap/Button';
+import {Link} from 'react-router-dom'
 
 
 function Homepage()
 {
     return (
-        <Container className="vh-100"  fluid style={{background:"linear-gradient(white, black)"}}>
+        <Container className="vh-100"  fluid style={{background:"linear-gradient(to bottom,white, #e3fcfc)"}}>
             <Row>
                 <Col xs={7}>
-                    <p >
-                        Sparkle
+                    <p style={{ position:"relative",
+                                top:"20%",
+                                left:"24%",
+                                fontWeight:"700",
+                                fontSize:"8vh"}}>
+
+                        A New
+                        <br/>
+                        Update For
+                        <br/>
+                         Presentation
+                        <br/>
+                        <p style={{fontSize:"3vh"}}>
+                            Good helper for online presentation
+                        </p>
+                        <Link to="/st">
+                        <Button variant="primary" size="lg"
+                                style={
+                                    {
+                                        position:"absolute"
+                                    }
+                                }>
+                                Start a Speech
+                        </Button>
+                        </Link>
                     </p>
+
                 </Col>
                  <Col>
-                        <br/>
-                        <br/>
-                        <br/>
-                     <br/>
-                     <br/>
-                     <br/>
-                     <br/>
-                     <br/>
-                     <br/>
-                     <br/>
-                     <br/>
-                     <br/>
-                      <img src={logo} style={{ height:"60vh"} }alt="logo" />
+                      <img src={logo} style={
+                          { height:"60vh",
+                            position:"relative",
+                            top:'20vh',
+                              left:"25%"
+                            } }
+                           alt="logo" />
                  </Col>
                 <Col>
 
