@@ -8,10 +8,10 @@ function App() {
       <Router>
         <Navi />
         <Routes>
-          <Route path="/" exact component={Homepage} />
-          <Route path="/about" component={Homepage} />
-          <Route path="/contact" component={Homepage} />
-          <Route component={Homepage} />
+          <Route path="/" exact element={<Homepage/>} />
+          <Route path="/about" element={<Homepage/>} />
+          <Route path="/contact" element={<Homepage/>} />
+
         </Routes>
       </Router>
   );
