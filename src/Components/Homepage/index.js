@@ -23,7 +23,13 @@ function Homepage()
                      <br/>
                      <br/>
                      <br/>
-                      <img src={logo} alt="logo" />
+                     <br/>
+                     <br/>
+                     <br/>
+                     <br/>
+                     <br/>
+                     <br/>
+                      <img src={logo} style={{ height:"60vh"} }alt="logo" />
                  </Col>
                 <Col>
 
