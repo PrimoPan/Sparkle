@@ -5,6 +5,7 @@ import * as cam from '@mediapipe/camera_utils';
 import { drawConnectors } from '@mediapipe/drawing_utils';
 import Webcam from 'react-webcam';
 import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import AUDIO from "@mediapipe/tasks-audio"
@@ -81,6 +82,7 @@ function Test() {
         //console.log(results);
 
         // Set canvas width and height
+        if (webcamRef.current.video===null) return ;
         canvasRef.current.width = webcamRef.current.video.videoWidth;
         canvasRef.current.height = webcamRef.current.video.videoHeight;
 
@@ -109,7 +111,7 @@ function Test() {
                 }
             }
 
-        /*
+
 
         if (results.multiFaceLandmarks){
             for (const landmarks of results.multiFaceLandmarks) {
@@ -122,7 +124,7 @@ function Test() {
                 drawConnectors(canvasCtx, landmarks, Facemesh.FACEMESH_FACE_OVAL, {color: '#C0C0C070'});
                 drawConnectors(canvasCtx, landmarks, Facemesh.FACEMESH_LIPS, {color: '#C0C0C070'});
             }
-        }*/
+        }
     }
 
     useEffect(() => {
@@ -142,6 +144,7 @@ function Test() {
         if (typeof webcamRef.current !== "undefined" && webcamRef.current !== null) {
             camera = new cam.Camera(webcamRef.current.video, {
                 onFrame:async () => {
+                    if (webcamRef.current.video==="undefined " || webcamRef.current.video===null) return ;
                     await faceMesh.send({image:webcamRef.current.video})
                     if (gestureRecognizer) {
                         TT = gestureRecognizer.recognize(webcamRef.current.video);
@@ -164,7 +167,7 @@ function Test() {
 
 
     return (
-        <Container className="vh-100"  fluid style={{background:"linear-gradient(180deg, #B8FFFD 0%, #FFFFFF 100%)"}}>
+        <Container className="vh-100"   fluid style={{textAlign:"center",background:"linear-gradient(180deg, #B8FFFD 0%, #FFFFFF 100%)"}}>
                 <Webcam
                     ref={webcamRef}
                     style={{
@@ -179,7 +182,17 @@ function Test() {
                         height: 480
                     }}
                 />
-                <canvas
+
+            <Spinner animation="border" role="status" style={{
+                position:"absolute",
+                top:"20vh",
+                left:"48vw",
+            }} variant="info" >
+                <span className="visually-hidden">Loading...</span>
+            </Spinner>
+
+
+            <canvas
                     ref={canvasRef}
                     style={{
                         position: "absolute",

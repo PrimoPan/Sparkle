@@ -17,7 +17,7 @@ function Navi() {
             <Nav className="justify-content-center" xs={8} fill variant="pills" >
                 <Nav.Link as={NavLink} to="/" exact>Home</Nav.Link>
                 <Nav.Link as={NavLink} to="/st" exact>Start a Speech</Nav.Link>
-                <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+                <Nav.Link as={NavLink} to="/about">Live Stream</Nav.Link>
                 <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
 
             </Nav>

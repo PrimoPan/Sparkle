@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import logo from "../../img/logo.png";
+import CloseButton from 'react-bootstrap/CloseButton';
 
 let cards=[];
 function Build()
@@ -38,7 +39,9 @@ function Build()
                         <Col xs={1}>
 
                         </Col>
-                           <button type="button" className="btn btn-primary btn-block">Gesture <br/> Driven#1</button>
+                           <button type="button" className="btn btn-primary btn-block">
+
+                               Gesture <br/> Driven#1</button>
                         <Col xs={1}>
 
                         </Col>
