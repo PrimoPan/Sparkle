@@ -21,4 +21,4 @@ To run the demo,use:
  $ npm start
  ```
 ## Copywrite
-Copyright 2013 , Primo Pan & Teki Han & Ruoyan Sun From Digital Media Art (Web And Smart Media Design Direction) Communication University of China , All rights reserved.
+Copyright 2023 , Primo Pan & Teki Han & Ruoyan Sun From Digital Media Art (Web And Smart Media Design Direction) Communication University of China , All rights reserved.
