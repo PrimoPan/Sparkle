@@ -11,6 +11,7 @@ function App() {
         <Navi />
         <Routes>
           <Route path="/" exact element={<Homepage/>} />
+            <Route path="/home" exact element={<Homepage/>} />
           <Route path="/about" element={<Test/>} />
           <Route path="/contact" element={<Homepage/>} />
             <Route path="/st" element={<Build/>}/>

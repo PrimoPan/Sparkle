@@ -4,6 +4,9 @@ import * as Facemesh from '@mediapipe/face_mesh';
 import * as cam from '@mediapipe/camera_utils';
 import { drawConnectors } from '@mediapipe/drawing_utils';
 import Webcam from 'react-webcam';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import {
     GestureRecognizer,
     DrawingUtils,
@@ -95,8 +98,7 @@ function Test() {
 
 
     return (
-        <div className="App">
-            <header className='App-header'>
+        <Container className="vh-100"  fluid style={{background:"linear-gradient(180deg, #B8FFFD 0%, #FFFFFF 100%)"}}>
                 <Webcam
                     ref={webcamRef}
                     style={{
@@ -117,6 +119,8 @@ function Test() {
                         position: "absolute",
                         marginLeft: "auto",
                         marginRight: "auto",
+                        paddingTop:0,
+                        marginTop:0,
                         left: 0,
                         right: 0,
                         textAlign: "center",
@@ -125,8 +129,7 @@ function Test() {
                         height: 960
                     }}
                 />
-            </header>
-        </div>
+        </Container>
     );
 }
 

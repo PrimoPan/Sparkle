@@ -7,7 +7,7 @@ function Choose()
 {
     return (
 
-            <Container className="vh-100"  fluid style={{zIndex:"2",position:"absolute",background:"linear-gradient(to bottom,white, #d3fcfc)"}}>
+        <Container className="vh-100"  fluid style={{background:"linear-gradient(180deg, #B8FFFD 0%, #FFFFFF 100%)"}}>
                 <Row>
                     <Col xs={4}>
                     </Col>

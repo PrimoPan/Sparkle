@@ -12,8 +12,9 @@ function Navi() {
 
     <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-            <Navbar.Brand href="#home">Sparkle</Navbar.Brand>
-            <Nav fill variant="pills" >
+
+            <Navbar.Brand href="#/home" xs={2}>Sparkle</Navbar.Brand>
+            <Nav className="justify-content-center" xs={8} fill variant="pills" >
                 <Nav.Link as={NavLink} to="/" exact>Home</Nav.Link>
                 <Nav.Link as={NavLink} to="/st" exact>Start a Speech</Nav.Link>
                 <Nav.Link as={NavLink} to="/about">About</Nav.Link>
@@ -32,7 +33,6 @@ function Navi() {
         </Container>
     </Navbar>
 
-    <br />
 
     </>
     );

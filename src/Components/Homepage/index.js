@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 function Homepage()
 {
     return (
-        <Container className="vh-100"  fluid style={{background:"linear-gradient(to bottom,white, #e3fcfc)"}}>
+        <Container className="vh-100"  fluid style={{background:"linear-gradient(180deg, #B8FFFD 0%, #FFFFFF 100%)"}}>
             <Row>
                 <Col xs={7}>
                     <p style={{ position:"relative",
@@ -19,23 +19,28 @@ function Homepage()
                                 fontWeight:"700",
                                 fontSize:"8vh"}}>
 
-                        A New
+                        A Revolution
                         <br/>
-                        Update For
+                        For Online
                         <br/>
                          Presentation
                         <br/>
                         <p style={{fontSize:"3vh"}}>
-                            Good helper for online presentation
+                            AR based online presentation
                         </p>
                         <Link to="/st">
                         <Button variant="primary" size="lg"
                                 style={
                                     {
-                                        position:"absolute"
+                                        position:"absolute", fontFamily: 'Arial',
+                                        fontStyle:'normal',
+                                        fontWeight:'700',
+                                        fontSize:'3vh',
+                                        lineHeight:'41px',
                                     }
                                 }>
-                                Start a Speech
+
+                                    Start a Speech!
                         </Button>
                         </Link>
                     </p>
