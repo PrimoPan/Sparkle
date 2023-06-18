@@ -20,5 +20,5 @@ To run the demo,use:
 ```bash
  $ npm start
  ```
-## Copywrite
+## Copyright
 Copyright 2023 , Primo Pan & Teki Han & Katara Sun From Digital Media Art (Web And Smart Media Design Direction) Communication University of China , All rights reserved.
