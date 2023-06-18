@@ -5,6 +5,7 @@ import Homepage from "./Components/Homepage"
 import Test from "./Components/test/index"
 import Build from "./Components/build/index"
 import Choose from "./Components/Choose"
+import Audio from "./Components/Audio"
 function App() {
   return (
       <Router>
@@ -13,7 +14,7 @@ function App() {
           <Route path="/" exact element={<Homepage/>} />
             <Route path="/home" exact element={<Homepage/>} />
           <Route path="/about" element={<Test/>} />
-          <Route path="/contact" element={<Homepage/>} />
+          <Route path="/contact" element={<Audio/>} />
             <Route path="/st" element={<Build/>}/>
             <Route path="/choose" element={<Choose/>}/>
         </Routes>
