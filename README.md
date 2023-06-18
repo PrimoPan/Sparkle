@@ -10,7 +10,7 @@ Sparkle (SPEECH-driven AR Key-node Live Effects）是一款由演讲驱动的多
   $ npm install
   
 ```
-  If you live in China we recommend you to use cnpm due to the restriction of GFW
+  If you live in PRC , we recommend you to use cnpm due to the restriction of GFW
 
 ```bash
   $ cnpm install
