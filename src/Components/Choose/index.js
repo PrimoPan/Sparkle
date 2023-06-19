@@ -27,12 +27,12 @@ function Choose()
                     <Row>
 
                         <Col xs={4}>
-                            <Link to="/choose">
-                                <button type="button" className="btn btn-primary btn-lg">Gesture Driven</button>
+                            <Link to="/addgesture">
+                                <button type="button" className="btn btn-primary btn-lg">Motion Driven</button>
                             </Link>
                         </Col>
                         <Col xs={4}>
-                            <Link to="/about">
+                            <Link to="/choose">
                                 <button type="button" className="btn btn-info btn-lg" style={{opacity:"50%"}}>Audio Driven</button>
                             </Link>
                         </Col>

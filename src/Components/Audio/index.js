@@ -4,28 +4,30 @@ const { AudioClassifier, AudioClassifierResult,    FilesetResolver} = audio;
 
 
 let audioClassifier=null
-
+//let wasm
 const createAudioClassifier = async () => {
-    const AUDIO = await FilesetResolver.forAudioTasks(
+     let wasm = await FilesetResolver.forAudioTasks(
         "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-audio/wasm"
-    ).catch()
-    {
-        audioClassifier = await AudioClassifier.createFromOptions(AUDIO, {
-            baseOptions: {
-                modelAssetPath:
-                    "https://tfhub.dev/google/lite-model/yamnet/classification/tflite/1?lite-format=tflite"
-            }
-        }).catch()
-        {
-            console.log("yes")
-        }
+    ).catch(e=>console.warn(e))
+    if (!wasm) {
+        console.log("none")
+        return ;
     }
-};
+    console.log(wasm)
+    audioClassifier = await AudioClassifier.createFromOptions(wasm, {
+        baseOptions: {
+            modelAssetPath:
+                "https://storage.googleapis.com/mediapipe-models/audio_classifier/yamnet/float32/1/yamnet.tflite"
+        }
+    });
+}
+
 
 function Audio()
 {
 
     createAudioClassifier()
+    //create();
     return (
         <p>
             hello world

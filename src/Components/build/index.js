@@ -47,6 +47,7 @@ function Build()
                         </Col>
                     </Row>
                     <br/>
+                    <Link to="/ad2">
                     <Row>
                         <Col xs={1}>
 
@@ -56,16 +57,21 @@ function Build()
 
                         </Col>
                     </Row>
+                    </Link>
                     <br/>
+                    <Link to="/addgesture">
                         <Row>
                             <Col xs={1}>
 
                             </Col>
-                            <button type="button" className="btn btn-primary btn-block">Gesture <br/> Driven#3</button>
+
+                            <button type="button" className="btn btn-primary btn-block">
+                                Gesture <br/> Driven#3</button>
                             <Col xs={1}>
 
                             </Col>
                         </Row>
+                    </Link>
                 </div>
 
             </Col>
@@ -85,7 +91,7 @@ function Build()
                         </Link>
                     </Col>
                     <Col xs={3}>
-                        <Link to="/about">
+                        <Link to="/LiveStream">
                           <button type="button" className="btn btn-info btn-lg" style={{opacity:"50%"}}>Start Presentation</button>
                         </Link>
                     </Col>
