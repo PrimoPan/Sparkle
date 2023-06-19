@@ -9,6 +9,9 @@ import Spinner from 'react-bootstrap/Spinner';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import AUDIO from "@mediapipe/tasks-audio"
+import Diff from "./differenct.png"
+import Covid from "./covid.png"
+import Flu from "./flu.png"
 
 import {
     GestureRecognizer,
@@ -18,8 +21,19 @@ import {
 } from "@mediapipe/tasks-vision"
 
 
+let difshow=true;
+let covidshow=false;
+let flushow=false;
 
-
+let curpalm=0;
+let curTup =0
+let curFin =0;
+var dif=new Image()
+dif.src=Diff
+var covid = new Image()
+covid.src=Covid
+var flu = new Image()
+flu.src=Flu
 
 const { AudioClassifier, AudioClassifierResult} = AUDIO;
 
@@ -49,7 +63,7 @@ const createGestureRecognizer = async () => {
     const vision = await FilesetResolver.forVisionTasks(
         "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm"
     );
-    console.log("vision",vision)
+   // console.log("vision",vision)
     gestureRecognizer = await GestureRecognizer.createFromOptions(vision, {
         baseOptions: {
             modelAssetPath:
@@ -93,13 +107,24 @@ function Test() {
 
         canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
         canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+        if (curpalm>=20 && difshow)
+            canvasCtx.drawImage(dif,0,300,640,200)
+        if (covidshow)
+        {
+            canvasCtx.drawImage(covid,100,100,100,100)
+        }
+        if (flushow)
+        {
+            canvasCtx.drawImage(flu,400,100,100,100)
+        }
         if (PP)
            // if (PP.landmarks[0].length>=30){
 
             if (PP.landmarks!=undefined) {
                 //console.log(PP.landmarks[0]);
                 let arr = PP.landmarks[0];
-                if (arr.length>=20)
+                if (arr)
+                    if (arr.length>=20)
                 for (let cor of arr) {
                     let x = cor.x *  canvasRef.current.width;
                     let y = cor.y *canvasRef.current.height;
@@ -150,8 +175,55 @@ function Test() {
                     if (gestureRecognizer) {
                         TT = gestureRecognizer.recognize(webcamRef.current.video);
                         //console.log(TT);
-                        if (TT.gestures.length>0);
-                           // console.log(TT.gestures[0][0].categoryName)
+                        if (TT.gestures)
+                         if (TT.gestures.length>0);
+                            if (TT.gestures[0])
+                                if (TT.gestures[0][0])
+                                 if (TT.gestures[0][0].categoryName) {
+                                     console.log(TT.gestures[0][0].categoryName)
+                                     let st=TT.gestures[0][0].categoryName
+                                     if (st==='Open_Palm') curpalm++;
+                                     if (st==='Pointing_Up') curFin++;
+                                     if (st==="Thumb_Up") curTup++;
+                                     if (curFin>=20)
+                                     {
+                                         flushow=true;
+                                     }
+                                     if (curTup>=20)
+                                     {
+                                         covidshow=true;
+                                     }
+                                     if (st!=='Open_Palm') {
+
+                                         if (curpalm >= 20) {
+                                             difshow = false;
+                                             curpalm = 0;
+                                             console.log(difshow," ",curpalm)
+                                         }
+                                     }
+                                    if (st!= 'Pointing_Up'){
+                                        if (curFin>=20)
+                                        {
+                                            curFin=0;
+
+                                        }
+
+                                    }
+                                    if (st!="Thumb_Up")
+                                    {
+                                        if (curTup>=20)
+                                        {
+                                            curTup=0;
+                                        }
+
+                                    }
+                                     if (st==="Closed_Fist")
+                                     {
+                                         flushow=false
+                                         covidshow=false;
+                                     }
+
+                                 }
                     }
                     if (poseLandmarker)
                     {

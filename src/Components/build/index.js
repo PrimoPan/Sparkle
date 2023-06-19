@@ -35,6 +35,7 @@ function Build()
 
                             }}
                 >
+                    <Link to="/ad1">
                     <Row>
                         <Col xs={1}>
 
@@ -46,6 +47,7 @@ function Build()
 
                         </Col>
                     </Row>
+                    </Link>
                     <br/>
                     <Link to="/ad2">
                     <Row>

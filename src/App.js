@@ -8,6 +8,7 @@ import Choose from "./Components/Choose"
 import Audio from "./Components/Audio"
 import Addgesture from "./Components/Addgesture"
 import Adtwo from "./Components/ad2";
+import Adone from "./Components/ad1";
 function App() {
   return (
       <Router>
@@ -23,6 +24,7 @@ function App() {
             </Route>
             <Route path="/addgesture" element={<Addgesture/>}/>
             <Route path="/ad2" element={<Adtwo/>}/>
+            <Route path="/ad1" element={<Adone/>}/>
         </Routes>
       </Router>
   );
